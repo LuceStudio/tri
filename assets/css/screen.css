@@ -301,6 +301,7 @@ body {
     position: relative;
     flex: 1 0 auto;
     display: flex;
+    max-width: 100%;
 }
 
 .site-header-background:not(.responsive-header-img) .site-nav-left-wrapper:after,
@@ -332,6 +333,7 @@ body {
     letter-spacing: 0.2px;
     text-transform: uppercase;
     white-space: nowrap;
+    max-width: 100%;
 
     -ms-overflow-scrolling: touch;
 }
@@ -380,11 +382,14 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .site-nav-content {
     position: relative;
     align-self: flex-start;
+    display: flex;
+}
+
+.site-nav-content-secondary {
+    text-transform: none;
 }
 
 .nav {
-    position: absolute;
-    z-index: 1000;
     display: flex;
     margin: 0 0 0 -12px;
     padding: 0;
@@ -493,6 +498,18 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     flex-shrink: 0;
     display: flex;
     align-items: center;
+}
+
+.social-links a {
+    height: 2em;
+    width: 2.5em;
+    padding: 0 .5em;
+}
+
+.social-links svg {
+    height: 100%;
+    width: 100%;
+    fill: currentColor;
 }
 
 .social-link {
@@ -2807,6 +2824,7 @@ Usage (In Ghost editor):
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    flex-direction: row-reverse;
     align-items: center;
     color: rgba(255,255,255,0.7);
     font-size: 1.3rem;
@@ -2826,34 +2844,16 @@ Usage (In Ghost editor):
 }
 
 .site-footer-nav a {
-    position: relative;
-    margin-left: 20px;
+    height: 2em;
+    width: 2.5em;
+    padding: 0 0.25em;
+    box-sizing: border-box;
 }
 
-.site-footer-nav a:before {
-    content: "";
-    position: absolute;
-    top: 11px;
-    left: -11px;
-    display: block;
-    width: 2px;
-    height: 2px;
-    background: #fff;
-    border-radius: 100%;
-}
-
-.site-footer-nav a:first-of-type:before {
-    display: none;
-}
-
-@media (max-width: 650px) {
-    .site-footer-content {
-        flex-direction: column;
-    }
-
-    .site-footer-nav a:first-child {
-        margin-left: 0;
-    }
+.site-footer-nav svg {
+    height: 100%;
+    width: 100%;
+    fill: currentColor;
 }
 
 

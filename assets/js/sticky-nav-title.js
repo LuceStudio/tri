@@ -17,11 +17,11 @@
 
 (function (window, document) {
     // set up Casper as a global object
-    if (!window.Casper) {
-        window.Casper = {};
+    if (!window.tri) {
+        window.tri = {};
     }
 
-    window.Casper.stickyNavTitle = function stickyNavTitle(options) {
+    window.tri.stickyNavTitle = function stickyNavTitle(options) {
         var nav = document.querySelector(options.navSelector);
         var title = document.querySelector(options.titleSelector);
 
@@ -54,7 +54,7 @@
             ticking = false;
         }
 
-        window.addEventListener('scroll', onScroll, {passive: true});
+        window.addEventListener('scroll', onScroll, { passive: true });
 
         update();
     };
